@@ -1,0 +1,27 @@
+<html>
+<header>
+   
+ <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>  -->
+</header>
+<body>
+<script type="text/javascript" src="/require.js"></script> 
+<!-- // Now in your HTML you can do -->
+<script src="/esapi.js"></script>
+<script src="/ESAPI_Standard_en_US.properties.js"></script>
+<script src="/Base.esapi.properties.js"></script>
+<script type="text/javascript" >  
+function showcommentform() {  
+//var data="Name:<br><input type='text' name='name'><br>Comment:<br><textarea rows='5' cols='50'></textarea><br><input type='submit' value='comment'>";  
+var data="clicked";
+ var ESAPI = require(['node-esapi']);
+// var ESAPI = import('/require.js');
+document.getElementById('mylocation').innerHTML=$ESAPI.encoder().encodeForJavascript(ESAPI.encoder().encodeForHTML(data));
+ }  
+  
+</script>  
+<form name="myForm">  
+<input type="button" value="comment" onclick="showcommentform()">  
+<div id="mylocation"></div>  
+</form>  
+</body>
+</html>
